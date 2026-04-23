@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar System Ultimate Showcase</title>
+  <link rel="stylesheet" href="static/css/styles.css" />
+</head>
+<body>
+  <canvas id="space"></canvas>
+
+  <div class="overlay topbar">
+    <div class="brand">
+      <div class="brand-badge"></div>
+      <div>
+        <div class="eyebrow">Interactive Space Experience</div>
+        <h1>Solar System Ultimate Showcase</h1>
+      </div>
+    </div>
+    <div class="quick-actions">
+      <div class="clock-panel glass">
+        <div class="clock-row"><span class="clock-label">Local</span><span id="realTimeLabel" class="clock-value">--:--:--</span></div>
+        <div class="clock-row"><span class="clock-label">Sim UTC</span><span id="simTimeLabel" class="clock-value">--</span></div>
+      </div>
+      <div class="speed-panel glass">
+        <div class="speed-title">Time Speed</div>
+        <div class="speed-buttons">
+          <button class="ghost speed-btn" data-speed="0.0166666667">1 min/s</button>
+          <button class="ghost speed-btn active" data-speed="1">1 h/s</button>
+          <button class="ghost speed-btn" data-speed="24">1 d/s</button>
+          <button class="ghost speed-btn" data-speed="168">1 w/s</button>
+          <button class="ghost speed-btn" data-speed="720">1 mo/s</button>
+          <button class="ghost speed-btn" data-speed="8760">1 y/s</button>
+        </div>
+      </div>
+      <button id="homeBtn" class="ghost">Overview</button>
+      <button id="pauseBtn" class="ghost">Pause</button>
+    </div>
+  </div>
+
+  <div class="overlay left-panel glass">
+    <div class="section-title">Controls</div>
+    <ul>
+      <li><span>Click</span><span>Focus planet</span></li>
+      <li><span>Double click</span><span>Open detail mode</span></li>
+      <li><span>Drag</span><span>Rotate camera</span></li>
+      <li><span>Wheel</span><span>Zoom in / out</span></li>
+      <li><span>Enter</span><span>Detail mode</span></li>
+      <li><span>Esc</span><span>Back</span></li>
+      <li><span>Space</span><span>Pause / Resume</span></li>
+      <li><span>1...6</span><span>Speed presets</span></li>
+      <li><span>[ / ]</span><span>Slower / Faster</span></li>
+      <li><span>R</span><span>Reset view + clock</span></li>
+    </ul>
+    <div class="section-title">Rendering</div>
+    <div class="metrics">
+      <div>
+        <div class="metric-label">Mode</div>
+        <div id="modeLabel" class="metric-value">Overview</div>
+      </div>
+      <div>
+        <div class="metric-label">Zoom</div>
+        <div id="zoomLabel" class="metric-value">1.00×</div>
+      </div>
+      <div>
+        <div class="metric-label">Time</div>
+        <div id="timeLabel" class="metric-value">1.00×</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay right-panel glass">
+    <div class="section-title">Selected Body</div>
+    <div id="planetName" class="planet-name">Sun</div>
+    <div id="planetSubtitle" class="planet-subtitle">Star of our solar system</div>
+    <div id="planetDescription" class="planet-description">
+      Select a planet to inspect realistic lighting, surface features, orbital motion, and detail markers.
+    </div>
+    <div id="detailBadge" class="detail-badge">Overview Focus</div>
+    <div class="facts-grid" id="factsGrid"></div>
+  </div>
+
+  <div class="overlay bottom-hint glass">
+    <div id="statusText">Tip: drag to orbit the camera, click a planet, then double click to enter cinematic detail mode.</div>
+  </div>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
